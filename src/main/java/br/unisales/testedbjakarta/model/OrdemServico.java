@@ -54,5 +54,8 @@ public class OrdemServico {
         this.cliente = cliente;
     }
 
-    
+    @Override
+    public String toString(){
+        return "ID: "+this.getId()+", DESCRICAO: "+this.getDescricao()+" DATA: "+this.getData();
+    }
 }

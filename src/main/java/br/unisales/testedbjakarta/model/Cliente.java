@@ -41,4 +41,10 @@ public class Cliente {
     public void setOrdensDeServico(List<OrdemServico> ordensDeServico) {
         this.ordensDeServico = ordensDeServico;
     }
-}
+
+    @Override
+    public String toString(){
+        return this.nome;
+    }
+
+}   

@@ -122,7 +122,15 @@ public class Program {
         System.out.print("Digite a descrição da Ordem de Serviço: ");
         String descricao = scanner.nextLine();
         ordemServico.setDescricao(descricao);
-    
+        List<Cliente> clientes = listarClientes();
+        System.out.println("\n ===Lista de Clientes===");
+        for (Cliente c : clientes) {
+            System.out.println(c.getIdCliente() + " - " + c.getNome());
+        }
+        System.out.println("Digite o codigo do Cliente: ");
+        Long id = scanner.nextLong();
+        Cliente cliente = buscarClientePorId(id);
+        ordemServico.setCliente(cliente);
         // Aqui, você pode ler e definir outros atributos da Ordem de Serviço, se necessário.
     
         return ordemServico;
@@ -226,7 +234,7 @@ public class Program {
                     List<OrdemServico> ordensServico = listarOrdensServico();
                     System.out.println("\n ===Lista de Ordens de Serviço===");
                     for (OrdemServico os : ordensServico) {
-                        System.out.println(os.getId() + " - " + os.getDescricao());
+                        System.out.println(os.getId() + " - " + os.getDescricao() + " - " + os.getCliente());
                     }
                     break;
                 case 4:
